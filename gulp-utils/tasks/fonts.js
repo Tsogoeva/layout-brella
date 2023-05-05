@@ -6,22 +6,6 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 import { path } from '../config/path.js';
 import plugins from '../config/plugins.js';
 
-export const otfToTtf = () => gulp.src(`${path.src.fonts}*.otf`) // Ищем файлы шрифтов .otf
-	// Уведомление ошибок
-	.pipe(plugins.plumber(
-		plugins.notify.onError({
-			title: "FONTS",
-			message: "Error: <%= error.message %>"
-		})
-	))
-	// Конвертируем в .ttf
-	.pipe(fonter({
-		formats: ['ttf']
-	}))
-	// Выгружаем в исходную папку
-	.pipe(gulp.dest(`${path.src.fonts}`));
-
-
 export const ttfToWoff = () => gulp.src(`${path.src.fonts}*.ttf`) // Ищем файлы шрифтов .ttf
 	// Уведомление ошибок
 	.pipe(plugins.plumber(

@@ -10,7 +10,7 @@ import scss from './gulp-utils/tasks/scss.js';
 import js from './gulp-utils/tasks/js.js';
 import image from './gulp-utils/tasks/image.js';
 import svgSprite from './gulp-utils/tasks/svgSprite.js';
-import { otfToTtf, ttfToWoff, fontsStyle } from './gulp-utils/tasks/fonts.js';
+import { ttfToWoff, fontsStyle } from './gulp-utils/tasks/fonts.js';
 import server from './gulp-utils/tasks/server.js';
 
 // Наблюдатель за изменениями в файлах
@@ -25,7 +25,7 @@ function watcher() {
 export { svgSprite };
 
 // Последовательная обработка шрифтов
-const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
+const fonts = gulp.series(ttfToWoff, fontsStyle);
 
 // Основные задачи
 const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, image));

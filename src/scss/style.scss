@@ -1,4 +1,12 @@
+// Сброс дефолтных стилей
 @import "reset.scss";
+
+// Подключение шрифтов
+@import "fonts.scss";
+
+body {
+	font-family: Raleway;
+}
 
 .icon {
 	display: block;
