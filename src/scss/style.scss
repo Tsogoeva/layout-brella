@@ -1,0 +1,10 @@
+@import "reset.scss";
+
+.icon {
+	display: block;
+	fill: red;
+
+	:hover {
+		fill: green;
+	}
+}
