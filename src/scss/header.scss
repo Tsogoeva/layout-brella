@@ -1,0 +1,64 @@
+.header {
+	min-height: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__left_side {
+		margin-left: 3.4%;
+	}
+
+	&__logo {
+		height: 24px;
+		width: 75px;
+		fill: rgba(33, 78, 65, 1);
+	}
+
+	&__right_side {
+		display: flex;
+		align-items: center;
+
+		margin-right: 5%;
+	}
+	&__nav {
+		display: flex;
+	}
+
+	&__options {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.nav_header {
+	&__menu {
+		display: flex;
+	}
+	&__menu_item {
+		margin-right: 50px;
+	}
+}
+
+.options_header {
+	&__demo {
+		color: rgba(255, 255, 255, 1);
+		background-color: rgba(67, 128, 108, 1);
+		border-radius: 10px;
+
+		padding: 10px 15px;
+		margin: 0 20px;
+	}
+	&__login {
+		margin: 0 10px;
+	}
+
+	&__login::after {
+		content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='8' width='13'><path d='M12.3371 1.18649L11.3988 0.113544L6.46055 5.7606L1.53874 0.113544L0.600464 1.18649L6.46055 7.88766H6.47701L12.3371 1.18649Z' fill='%23214e41'/></svg>");
+		padding: 0 5px;
+		width: 13px;
+		height: 8px;
+	}
+	&__lang {
+		margin-left: 25px;
+	}
+}
