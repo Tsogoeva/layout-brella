@@ -33,9 +33,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 100%;
   line-height: 1;
-  font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -134,6 +132,54 @@ h6 {
   font-style: normal;
 }
 
+@-webkit-keyframes openLogo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes openLogo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes closeLogo {
+  0% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes closeLogo {
+  0% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
 .header {
   min-height: 90px;
   display: -webkit-box;
@@ -145,6 +191,8 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .header__left_side {
@@ -201,17 +249,30 @@ h6 {
 }
 
 .options_header__login {
+  font-size: 0.813rem;
   margin: 0 10px;
 }
 
 .options_header__login::after {
-  content: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='8' width='13'><path d='M12.3371 1.18649L11.3988 0.113544L6.46055 5.7606L1.53874 0.113544L0.600464 1.18649L6.46055 7.88766H6.47701L12.3371 1.18649Z' fill='%23214e41'/></svg>");
-  padding: 0 5px;
+  content: "";
+  display: inline-block;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='8' width='13'><path d='M12.3371 1.18649L11.3988 0.113544L6.46055 5.7606L1.53874 0.113544L0.600464 1.18649L6.46055 7.88766H6.47701L12.3371 1.18649Z' fill='%23214e41'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  padding: 5px 10px;
   width: 13px;
   height: 8px;
+  -webkit-animation: closeLogo 1s forwards;
+          animation: closeLogo 1s forwards;
+}
+
+.options_header__login:hover::after {
+  -webkit-animation: openLogo 1s forwards;
+          animation: openLogo 1s forwards;
 }
 
 .options_header__lang {
+  font-size: 0.813rem;
   margin-left: 25px;
 }
 
