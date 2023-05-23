@@ -180,6 +180,54 @@ h6 {
   }
 }
 
+@-webkit-keyframes hoverDemo {
+  0% {
+    background-color: rgb(67, 128, 108);
+    color: rgb(255, 255, 255);
+  }
+
+  100% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 128, 108);
+  }
+}
+
+@keyframes hoverDemo {
+  0% {
+    background-color: rgb(67, 128, 108);
+    color: rgb(255, 255, 255);
+  }
+
+  100% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 128, 108);
+  }
+}
+
+@-webkit-keyframes notHoverDemo {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 128, 108);
+  }
+
+  100% {
+    background-color: rgb(67, 128, 108);
+    color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes notHoverDemo {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(67, 128, 108);
+  }
+
+  100% {
+    background-color: rgb(67, 128, 108);
+    color: rgb(255, 255, 255);
+  }
+}
+
 .header {
   min-height: 90px;
   display: -webkit-box;
@@ -238,19 +286,42 @@ h6 {
 
 .nav_header__menu_item {
   margin-right: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(currentColor), to(currentColor));
+  background-image: -o-linear-gradient(currentColor, currentColor);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  -webkit-transition: background-size 0.3s;
+  -o-transition: background-size 0.3s;
+  transition: background-size 0.3s;
+}
+
+.nav_header__menu_item:hover {
+  background-size: 100% 2px;
 }
 
 .options_header__demo {
-  color: rgb(255, 255, 255);
-  background-color: rgb(67, 128, 108);
+  border: 1px solid rgb(67, 128, 108);
   border-radius: 10px;
   padding: 10px 15px;
   margin: 0 20px;
+  -webkit-animation: notHoverDemo 1s forwards;
+          animation: notHoverDemo 1s forwards;
+  cursor: pointer;
+}
+
+.options_header__demo:hover {
+  -webkit-animation: hoverDemo 1s forwards;
+          animation: hoverDemo 1s forwards;
 }
 
 .options_header__login {
   font-size: 0.813rem;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .options_header__login::after {
@@ -274,6 +345,7 @@ h6 {
 .options_header__lang {
   font-size: 0.813rem;
   margin-left: 25px;
+  cursor: pointer;
 }
 
 body {

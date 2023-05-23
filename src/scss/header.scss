@@ -16,6 +16,28 @@
 	}
 }
 
+@keyframes hoverDemo {
+	0% {
+		background-color: rgba(67, 128, 108, 1);
+		color: rgba(255, 255, 255, 1);
+	}
+	100% {
+		background-color: rgba(255, 255, 255, 1);
+		color: rgba(67, 128, 108, 1);
+	}
+}
+
+@keyframes notHoverDemo {
+	0% {
+		background-color: rgba(255, 255, 255, 1);
+		color: rgba(67, 128, 108, 1);
+	}
+	100% {
+		background-color: rgba(67, 128, 108, 1);
+		color: rgba(255, 255, 255, 1);
+	}
+}
+
 .header {
 	min-height: 90px;
 	display: flex;
@@ -56,21 +78,41 @@
 	}
 	&__menu_item {
 		margin-right: 50px;
+		cursor: pointer;
+
+		text-decoration: none;
+		background-image: linear-gradient(currentColor, currentColor);
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+		background-size: 0% 2px;
+		transition: background-size 0.3s;
+	}
+
+	&__menu_item:hover {
+		background-size: 100% 2px;
 	}
 }
 
 .options_header {
 	&__demo {
-		color: rgba(255, 255, 255, 1);
-		background-color: rgba(67, 128, 108, 1);
+		border: 1px solid rgba(67, 128, 108, 1);
 		border-radius: 10px;
-
 		padding: 10px 15px;
 		margin: 0 20px;
+		animation: notHoverDemo 1s forwards;
+
+		cursor: pointer;
 	}
+
+	&__demo:hover {
+		animation: hoverDemo 1s forwards;
+	}
+
 	&__login {
 		font-size: 0.813rem;
 		margin: 0 10px;
+
+		cursor: pointer;
 	}
 
 	&__login::after {
@@ -93,5 +135,7 @@
 	&__lang {
 		font-size: 0.813rem;
 		margin-left: 25px;
+
+		cursor: pointer;
 	}
 }
