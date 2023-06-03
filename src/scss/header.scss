@@ -66,6 +66,62 @@
 		display: flex;
 	}
 
+	&__nav_btn {
+		display: none;
+
+		@media (max-width: 1140px) {
+			display: block;
+
+			width: 40px;
+			height: 25px;
+			position: relative;
+			margin: 0 10px;
+			transform: rotate(0deg);
+			transition: 0.5s ease-in-out;
+			cursor: pointer;
+		}
+	}
+
+	&__nav_btn span {
+		display: none;
+	}
+	@media (max-width: 1140px) {
+		&__nav_btn span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			background: rgba(33, 78, 65, 1);
+			border: 1px solid rgba(33, 78, 65, 1);
+			border-radius: 5px;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: 0.25s ease-in-out;
+		}
+		&__nav_btn span:nth-child(1) {
+			top: 0px;
+		}
+		&__nav_btn span:nth-child(2) {
+			top: 10px;
+		}
+		&__nav_btn span:nth-child(3) {
+			top: 20px;
+		}
+		&__nav_btn.open span:nth-child(1) {
+			top: 10px;
+			transform: rotate(135deg);
+		}
+		&__nav_btn.open span:nth-child(2) {
+			opacity: 0;
+			left: -60px;
+		}
+		&__nav_btn.open span:nth-child(3) {
+			top: 10px;
+			transform: rotate(-135deg);
+		}
+	}
+
 	&__options {
 		display: flex;
 		align-items: center;
@@ -73,35 +129,46 @@
 }
 
 .nav_header {
-	&__menu {
-		display: flex;
-	}
-	&__menu_item {
-		margin-right: 50px;
-		cursor: pointer;
+	display: none;
 
-		text-decoration: none;
-		background-image: linear-gradient(currentColor, currentColor);
-		background-position: 0% 100%;
-		background-repeat: no-repeat;
-		background-size: 0% 2px;
-		transition: background-size 0.3s;
-	}
+	@media (min-width: 1140px) {
+		display: block;
 
-	&__menu_item:hover {
-		background-size: 100% 2px;
+		&__menu {
+			display: flex;
+		}
+		&__menu_item {
+			margin-right: 50px;
+			cursor: pointer;
+
+			text-decoration: none;
+			background-image: linear-gradient(currentColor, currentColor);
+			background-position: 0% 100%;
+			background-repeat: no-repeat;
+			background-size: 0% 2px;
+			transition: background-size 0.3s;
+		}
+
+		&__menu_item:hover {
+			background-size: 100% 2px;
+		}
 	}
 }
 
 .options_header {
 	&__demo {
-		border: 1px solid rgba(67, 128, 108, 1);
-		border-radius: 10px;
-		padding: 10px 15px;
-		margin: 0 20px;
-		animation: notHoverDemo 0.5s forwards;
+		display: none;
 
-		cursor: pointer;
+		@media (min-width: 550px) {
+			display: block;
+			border: 1px solid rgba(67, 128, 108, 1);
+			border-radius: 10px;
+			padding: 10px 15px;
+			margin: 0 20px;
+			animation: notHoverDemo 0.5s forwards;
+
+			cursor: pointer;
+		}
 	}
 
 	&__demo:hover {
@@ -109,10 +176,15 @@
 	}
 
 	&__login {
-		font-size: 0.813rem;
-		margin: 0 10px;
+		font-size: 1.25rem;
+		margin: 0 15px;
 
 		cursor: pointer;
+
+		@media (min-width: 550px) {
+			font-size: 0.813rem;
+			margin: 0 10px;
+		}
 	}
 
 	&__login::after {
@@ -133,9 +205,13 @@
 	}
 
 	&__lang {
-		font-size: 0.813rem;
-		margin-left: 25px;
-
+		font-size: 1.25rem;
+		margin-left: 5px;
 		cursor: pointer;
+
+		@media (min-width: 550px) {
+			font-size: 0.813rem;
+			margin-left: 25px;
+		}
 	}
 }
