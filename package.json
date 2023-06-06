@@ -4,9 +4,12 @@
   "description": "",
   "main": "gulpfile.js",
   "type": "module",
+  "homepage": "https://tsogoeva.github.io/layout-brella/",
   "scripts": {
-    "dev": "gulp",
-    "svgSprite": "gulp svgSprite"
+    "start": "gulp",
+    "svgSprite": "gulp svgSprite",
+    "predeploy": "rm -rf build && npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
