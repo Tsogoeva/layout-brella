@@ -41,5 +41,8 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.81.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
